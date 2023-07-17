@@ -32,30 +32,29 @@ var quotesArr =
             'quote': 'We accept the love we think we deserve.'
         },
     ];
-function displayQuote() 
-{
-    var random =Math.floor(Math.random()*quotesArr.length + 1);
-    document.getElementById("quoteTxt").innerHTML =`"${quotesArr[random].quote}"`;
-    document.getElementById("authorName").innerHTML =`--${quotesArr[random].author}`;
+// function displayQuote() 
+// {
+//     var random =Math.floor(Math.random()*quotesArr.length + 1);
+//     document.getElementById("quoteTxt").innerHTML =`"${quotesArr[random].quote}"`;
+//     document.getElementById("authorName").innerHTML =`--${quotesArr[random].author}`;
 
-}
-// var lastNumber = 0;
-
-// function displayQuote() {
-
-//     var randomNum = function () 
-//     {
-//         var getRandomNum = Math.floor(Math.random() * (quotesArr.length));
-//         if (getRandomNum != lastNumber) {
-//             document.getElementById("quoteTxt").innerHTML = `"${quotesArr[getRandomNum].quote}"`;
-//             document.getElementById("authorName").innerHTML = `--${quotesArr[getRandomNum].author}`;
-//             lastNumber = getRandomNum;
-//             console.log(getRandomNum)
-//         } else {
-//             randomNum();
-//         }
-//     };
-
-//     randomNum();
 // }
+var lastNumber = 0;
+
+function displayQuote() {
+
+    var randomNum = function () {
+        var getRandomNum = Math.floor(Math.random() * (quotesArr.length));
+        if (getRandomNum != lastNumber) {
+            document.getElementById("quoteTxt").innerHTML = `"${quotesArr[getRandomNum].quote}"`;
+            document.getElementById("authorName").innerHTML = `--${quotesArr[getRandomNum].author}`;
+            lastNumber = getRandomNum;
+            console.log(getRandomNum)
+        } else {
+            randomNum();
+        }
+    };
+
+    randomNum();
+}
 
